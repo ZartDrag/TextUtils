@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function About() {
+export default function About(props) {
   const [pageStyle, setPageStyle] = React.useState({
     color: "black",
     backgroundColor: "white",
@@ -22,8 +22,12 @@ export default function About() {
 
   return (
     <div className="container">
-      <div className="accordion" id="accordionExample">
-        <div className="accordion-item" style={pageStyle}>
+      <div
+        className="accordion"
+        id="accordionExample"
+        data-bs-theme={props.mode}
+      >
+        <div className="accordion-item">
           <h2 className="accordion-header">
             <button
               className="accordion-button"
@@ -47,7 +51,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={pageStyle}>
+        <div className="accordion-item">
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
@@ -104,7 +108,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={pageStyle}>
+        <div className="accordion-item">
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
@@ -126,20 +130,6 @@ export default function About() {
               What more do you want mate? Leave me alone, I'm tired :'(
             </div>
           </div>
-        </div>
-      </div>
-      <div className="container my-3">
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-            onClick={toggleDarkMode}
-          />
-          <label class="form-check-label mx-1" for="flexSwitchCheckDefault">
-            Dark Mode
-          </label>
         </div>
       </div>
     </div>
