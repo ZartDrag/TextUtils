@@ -3,15 +3,17 @@ import PropTypes from "prop-types";
 
 export default function TextArea(props) {
   const [text, setText] = useState("Enter Text Here");
-  const [wordCount, setWordCount] = useState(text.split(" ").length);
 
-  const changeHandler = (event) => {
-    setText(event.target.value);
+  const getWordCount = () => {
     let words = [];
     text.split(" ").forEach((word) => {
       if (word !== "") words.push(word);
     });
-    setWordCount(words.length);
+    return words.length;
+  }
+
+  const changeHandler = (event) => {
+    setText(event.target.value);
   };
 
   const upClickHander = () => {
@@ -38,7 +40,6 @@ export default function TextArea(props) {
 
   const clearClickHander = () => {
     setText("");
-    setWordCount(0);
     props.fireAlert("success", "Text Cleared");
   };
 
@@ -151,10 +152,10 @@ export default function TextArea(props) {
       >
         <h2>Your text Summary</h2>
         <p>
-          Your text has {wordCount} {wordCount === 1 ? "word" : "words"} and{" "}
+          Your text has {getWordCount()} {getWordCount() === 1 ? "word" : "words"} and{" "}
           {text.length} characters.
         </p>
-        <p>Would take {0.008 * wordCount} minutes to read. </p>
+        <p>Would take {0.008 * getWordCount()} minutes to read. </p>
         <h3>Text Preview</h3>
         <p>
           {text.length > 0 ? text : "Enter something in the textbox above."}
