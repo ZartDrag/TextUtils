@@ -16,10 +16,12 @@ export default function TextArea(props) {
 
   const upClickHander = () => {
     setText(text.toUpperCase());
+    props.fireAlert("success", "Text converted to Upper Case");
   };
 
   const lowClickHander = () => {
     setText(text.toLowerCase());
+    props.fireAlert("success", "Text converted to Lower Case");
   };
 
   const capitalizedClickHander = () => {
@@ -31,10 +33,12 @@ export default function TextArea(props) {
     });
     console.log(newText);
     setText(newText);
+    props.fireAlert("success", "Text converted to Capitalized Case");
   };
 
   const clearClickHander = () => {
     setText("");
+    props.fireAlert("success", "Text Cleared");
   };
 
   const loremClickHandler = () => {
@@ -42,6 +46,7 @@ export default function TextArea(props) {
       text +
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos unde mollitia repudiandae ullam soluta ad perspiciatis adipisci placeat veritatis necessitatibus sunt quas, porro eius reiciendis animi quae eligendi? Ratione eos, hic iusto enim debitis natus magni ipsam laudantium vel nam tenetur repellat rerum tempora similique. "
     );
+    props.fireAlert("success", "Sample Text Added");
   };
 
   const sentenceClickHandler = () => {
@@ -68,7 +73,8 @@ export default function TextArea(props) {
         }
 
         if (!blank)
-          newText += " " + sentence[0].toUpperCase() + sentence.substring(1) + ".";
+          newText +=
+            " " + sentence[0].toUpperCase() + sentence.substring(1) + ".";
       });
 
     let newerText = "";
@@ -83,16 +89,20 @@ export default function TextArea(props) {
         }
       }
       if (!blank)
-        newerText += " " + sentence[0].toUpperCase() + sentence.substring(1) + "?";
+        newerText +=
+          " " + sentence[0].toUpperCase() + sentence.substring(1) + "?";
     });
 
     newerText = newerText.substring(0, newerText.length - 2) + symbol;
 
     setText(newerText.trim());
+    props.fireAlert("success", "Text converted to Sentence Case");
   };
   return (
     <>
-      <div className="container">
+      <div
+        className={`container text-${props.mode === "dark" ? "light" : "dark"}`}
+      >
         <div className="mb-3">
           <h1>{props.heading}</h1>
           <textarea
@@ -101,6 +111,7 @@ export default function TextArea(props) {
             rows="8"
             value={text}
             onChange={changeHandler}
+            data-bs-theme={props.mode}
           ></textarea>
         </div>
 
@@ -132,7 +143,11 @@ export default function TextArea(props) {
         </button>
       </div>
 
-      <div className="container my-3">
+      <div
+        className={`container text-${
+          props.mode === "dark" ? "light" : "dark"
+        } my-3`}
+      >
         <h2>Your text Summary</h2>
         <p>
           Your text has {wordCount} {wordCount === 1 ? "word" : "words"} and{" "}
@@ -140,7 +155,9 @@ export default function TextArea(props) {
         </p>
         <p>Would take {0.008 * wordCount} minutes to read. </p>
         <h3>Text Preview</h3>
-        <p>{text}</p>
+        <p>
+          {text.length > 0 ? text : "Enter something in the textbox above."}
+        </p>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 export default function Navbar(props) {
@@ -91,7 +91,6 @@ export default function Navbar(props) {
                 role="switch"
                 id="flexSwitchCheckDefault"
                 onClick={props.toggleMode}
-                // onClick={console.log("clicked")}
               />
               <label
                 className={`form-check-label mx-1 text-${
