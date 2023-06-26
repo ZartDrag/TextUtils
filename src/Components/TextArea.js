@@ -38,6 +38,7 @@ export default function TextArea(props) {
 
   const clearClickHander = () => {
     setText("");
+    setWordCount(0);
     props.fireAlert("success", "Text Cleared");
   };
 
