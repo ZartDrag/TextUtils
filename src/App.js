@@ -1,9 +1,11 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import TextArea from "./Components/TextArea";
-// import About from "./About";
+import About from "./About";
 import { useState } from "react";
 import Alert from "./Components/Alert";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const name = "TextUtils";
 function App() {
@@ -33,18 +35,26 @@ function App() {
     }
   };
   return (
-    <div>
-      <Navbar title={name} mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} fireAlert={fireAlert} />
-      <div className="container my-3">
-        <TextArea
-          heading="Enter the text to be processed"
-          mode={mode}
-          fireAlert={fireAlert}
-        />
-        {/* <About mode={mode} /> */}
+    <Router>
+      <div>
+        <Navbar title={name} mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} fireAlert={fireAlert} />
+        <Routes>
+          <Route exact path="/about" element={<About mode={mode} />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <TextArea
+                heading="Enter the text to be processed"
+                mode={mode}
+                fireAlert={fireAlert}
+              />
+            }
+          />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

@@ -6,20 +6,6 @@ export default function About(props) {
     backgroundColor: "white",
   });
 
-  const toggleDarkMode = () => {
-    if (pageStyle.color === "white") {
-      setPageStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-    } else {
-      setPageStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-    }
-  };
-
   return (
     <div className="container">
       <div
