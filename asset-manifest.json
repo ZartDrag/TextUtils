@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TextUtilsnpm%20install%20--save%20gh-pages/static/css/main.abd64e84.css",
-    "main.js": "/TextUtilsnpm%20install%20--save%20gh-pages/static/js/main.17ace679.js",
-    "static/js/787.0cbdef75.chunk.js": "/TextUtilsnpm%20install%20--save%20gh-pages/static/js/787.0cbdef75.chunk.js",
-    "index.html": "/TextUtilsnpm%20install%20--save%20gh-pages/index.html",
-    "main.abd64e84.css.map": "/TextUtilsnpm%20install%20--save%20gh-pages/static/css/main.abd64e84.css.map",
-    "main.17ace679.js.map": "/TextUtilsnpm%20install%20--save%20gh-pages/static/js/main.17ace679.js.map",
-    "787.0cbdef75.chunk.js.map": "/TextUtilsnpm%20install%20--save%20gh-pages/static/js/787.0cbdef75.chunk.js.map"
+    "main.css": "/TextUtils/static/css/main.abd64e84.css",
+    "main.js": "/TextUtils/static/js/main.74a3d8bc.js",
+    "static/js/787.0cbdef75.chunk.js": "/TextUtils/static/js/787.0cbdef75.chunk.js",
+    "index.html": "/TextUtils/index.html",
+    "main.abd64e84.css.map": "/TextUtils/static/css/main.abd64e84.css.map",
+    "main.74a3d8bc.js.map": "/TextUtils/static/js/main.74a3d8bc.js.map",
+    "787.0cbdef75.chunk.js.map": "/TextUtils/static/js/787.0cbdef75.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.17ace679.js"
+    "static/js/main.74a3d8bc.js"
   ]
 }
